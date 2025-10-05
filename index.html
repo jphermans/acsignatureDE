@@ -790,99 +790,94 @@ AtlasCopco(john.doe@atlascopco.com)_files\</pre>
       const telMobile = sanitizeTel(mobile);
       const telPhone = sanitizeTel(phone);
 
-      contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Mobil: <a href="tel:${telMobile}" style="color:#2F363A;text-decoration:none;">${safeMobile}</a></div>`;
-      contactInfoText += `Mobil: ${mobile}\n`;
-
       if (phone !== "") {
-        contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Telefon: <a href="tel:${telPhone}" style="color:#2F363A;text-decoration:none;">${safePhone}</a></div>`;
-        contactInfoText += `Telefon: ${phone}\n`;
+        contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Phone: <a href="tel:${telPhone}" style="color:#2F363A;text-decoration:none;">${safePhone}</a> - Mobile: <a href="tel:${telMobile}" style="color:#2F363A;text-decoration:none;">${safeMobile}</a></div>`;
+        contactInfoText += `Phone: ${phone} - Mobile: ${mobile}\n`;
+      } else {
+        contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Mobile: <a href="tel:${telMobile}" style="color:#2F363A;text-decoration:none;">${safeMobile}</a></div>`;
+        contactInfoText += `Mobile: ${mobile}\n`;
       }
 
-      contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">E-Mail: <a href="mailto:${safeEmail}" style="color:#0092BC;text-decoration:none;">${safeEmail}</a></div>`;
-      contactInfoText += `E-Mail: ${email}\n`;
+      contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Email: <a href="mailto:${safeEmail}" style="color:#0092BC;text-decoration:none;">${safeEmail}</a></div>`;
+      contactInfoText += `Email: ${email}\n`;
 
       htmlSignature = `
 <html><head><meta charset="UTF-8"></head><body>
 <div style="font-family:Calibri,Arial,sans-serif; font-size:9pt; color:#2F363A; line-height:1.4; max-width:600px;">
-  <div>Mit freundlichen Grüßen,</div><br>
-  <div style="font-weight:bold; color:#0092BC; font-size:11pt; margin-top:4px;">${safeName}</div>
+  <div>Best regards / Mit freundlichen Grüßen,</div>
+  <div style="margin-top:4px; font-weight:bold;">i.A. <span style="color:#0092BC;">${safeName}</span></div>
   <div style="font-weight:bold; font-size:9pt; margin-top:2px;">${safeTitle}</div>
 
-  <hr style="border:0;border-top:1px solid #E1D6CE;margin:8px 0;">
+  <div style="margin-top:12px; font-weight:bold; font-size:10pt;">Atlas Copco Tools Central Europe GmbH</div>
+  <div>Address: Langemarckstr. 35, D-45141 Essen</div>
+  <div style="color:#d1434b; font-weight:bold;">We're moving! New Visitor Address as of Dec 1, 2025: Wetterschacht 9, D-45139 Essen</div>
+  <div>Postal Address: 10 02 04, D-45002 Essen</div>
+  <div>Managing Director: Claus Schiedeck, Peter Edmonds</div>
 
-  <div style="font-weight:bold; font-size:10pt;">Atlas Copco Tools Central Europe GmbH</div>
-  <div>Hauptsitz: Atlas Copco Tools Central Europe GmbH, Langemarckstr. 35, D-45141 Essen</div>
-  <div style="color:red; font-weight:bold;">Hauptsitz: <u>Neue Adresse ab 1. Dezember 2025</u>: Wetterschacht 9, D-45139 Essen</div>
-  <div>Niederlassung Belgien (Atlas Copco Tools Belgium): Bremakker 45, B-3740 Bilzen</div>
-  <div>Geschäftsführung: Claus Schiedeck, Peter Edmonds</div>
+  <div style="margin-top:6px;">${contactInfoHtml}</div>
 
-  ${contactInfoHtml}
+  <div style="margin-top:6px;">VAT Reg. No.: DE811155641</div>
+  <div>Company Reg. No.: HRB 5096 – Local Court Essen</div>
+  <div>Registered Office: Atlas Copco Tools Central Europe GmbH</div>
 
-  <div style="margin-top:6px;">USt-IdNr.: DE811155641 (Deutschland) / BE0473470658 (Belgien)</div>
-  <div>Handelsregistereintrag: HRB 5096 – Amtsgericht Essen (Hauptsitz) / R.C.B. 646980 - Brüssel (Belgische Niederlassung)</div>
-  <div>Peppol-ID (Belgien): 0208:0473470658</div>
+  <div style="margin-top:6px;">Privacy policy: <a href="https://www.atlascopco.com/de-de/itba/datenschutzerklarung" target="_blank" style="color:#0092BC;text-decoration:none;">https://www.atlascopco.com/de-de/itba/datenschutzerklarung</a></div>
 
-  <div style="margin-top:6px;">Datenschutzerklärung: <a href="https://www.atlascopco.com/nl-be/itba/privacy-policy" target="_blank" style="color:#0092BC;text-decoration:none;">https://www.atlascopco.com/nl-be/itba/privacy-policy</a></div>
+  <div style="margin-top:6px;"><b style="color:#0092BC;">Leave your feedback at</b> <a href="https://www.atlascopco.com" target="_blank" style="color:#0092BC; font-style:italic; text-decoration:none;">atlascopco.com</a></div>
 
-  <hr style="border:0;border-top:1px solid #E1D6CE;margin:8px 0;">
-
-  <div><b style="color:#0092BC;">Entdecke mehr auf</b> <a href="https://www.atlascopco.com" target="_blank" style="color:#0092BC; font-style:italic; text-decoration:none;">atlascopco.com</a></div>
-
-  <hr style="border:0;border-top:1px solid #E1D6CE;margin:8px 0;">
-
-  <table cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td><img src="https://groupapp.atlascopco.com/mail-signature/Signature/AtlasCopco/ACBlueSquare.png" width="8" height="8" style="display:block;"></td>
-      <td style="padding-left:5px;">
-        <span style="font-size:8pt; color:#A1A9B4; font-weight:bold;">Teil der Atlas Copco Gruppe</span>
-      </td>
-    </tr>
-  </table>
-</div>
+  <div style="margin-top:10px;">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td><img src="https://groupapp.atlascopco.com/mail-signature/Signature/AtlasCopco/ACBlueSquare.png" width="8" height="8" style="display:block;"></td>
+        <td style="padding-left:5px;">
+          <span style="font-size:8pt; color:#A1A9B4; font-weight:bold;">Teil der Atlas Copco Gruppe</span>
+        </td>
+      </tr>
+    </table>
+  </div>
 </body></html>`;
 
-      txtSignature = `Mit freundlichen Grüßen,
-${name}
+      txtSignature = `Best regards / Mit freundlichen Grüßen,
+i.A. ${name}
 ${title}
 
-----------------------------------------
 Atlas Copco Tools Central Europe GmbH
-Hauptsitz: Atlas Copco Tools Central Europe GmbH, Langemarckstr. 35, D-45141 Essen
-Hauptsitz: Neue Adresse ab 1. Dezember 2025: Wetterschacht 9, D-45139 Essen
-Niederlassung Belgien (Atlas Copco Tools Belgium): Bremakker 45, B-3740 Bilzen
-Geschäftsführung: Claus Schiedeck, Peter Edmonds
+Address: Langemarckstr. 35, D-45141 Essen
+We're moving! New Visitor Address as of Dec 1, 2025: Wetterschacht 9, D-45139 Essen
+Postal Address: 10 02 04, D-45002 Essen
+Managing Director: Claus Schiedeck, Peter Edmonds
 
-${contactInfoText}USt-IdNr.: DE811155641 (Deutschland) / BE0473470658 (Belgien)
-Handelsregistereintrag: HRB 5096 – Amtsgericht Essen (Hauptsitz) / R.C.B. 646980 - Brüssel (Belgische Niederlassung)
-Peppol-ID (Belgien): 0208:0473470658
+${contactInfoText}
+VAT Reg. No.: DE811155641
+Company Reg. No.: HRB 5096 – Local Court Essen
+Registered Office: Atlas Copco Tools Central Europe GmbH
 
-Datenschutzerklärung: https://www.atlascopco.com/nl-be/itba/privacy-policy
-----------------------------------------
-Entdecke mehr auf atlascopco.com
-----------------------------------------
-Teil der Atlas Copco Gruppe
+Privacy policy: https://www.atlascopco.com/de-de/itba/datenschutzerklarung
+Leave your feedback at atlascopco.com
+
+Part of the Atlas Copco Group
 `;
 
-      rtfSignature = `{\\rtf1\\ansi\\deff0
-{\\fonttbl{\\f0 Calibri;}}
-\\f0\\fs18 Mit freundlichen Gr\\'fc\\'dfen,\\line
-\\b\\cf1 ${escapeRtf(name)}\\b0\\line
-${escapeRtf(title)}\\line
-\\line
-Atlas Copco Tools Central Europe GmbH\\line
-Hauptsitz: Atlas Copco Tools Central Europe GmbH, Langemarckstr. 35, D-45141 Essen\\line
-Hauptsitz: Neue Adresse ab 1. Dezember 2025: Wetterschacht 9, D-45139 Essen\\line
-Niederlassung Belgien (Atlas Copco Tools Belgium): Bremakker 45, B-3740 Bilzen\\line
-Gesch\\'e4ftsf\\'fchrung: Claus Schiedeck, Peter Edmonds\\line
-\\line
-${escapeRtf(contactInfoText).replace(/\n/g, "\\line ")}\\line
-USt-IdNr.: DE811155641 (Deutschland) / BE0473470658 (Belgien)\\line
-Handelsregistereintrag: HRB 5096 - Amtsgericht Essen (Hauptsitz) / R.C.B. 646980 - Br\\'fcssel (Belgische Niederlassung)\\line
-Peppol-ID (Belgien): 0208:0473470658\\line
-\\line
-Datenschutzerkl\\'e4rung: https://www.atlascopco.com/nl-be/itba/privacy-policy\\line
-Entdecke mehr auf atlascopco.com\\line
-Teil der Atlas Copco Gruppe
+      rtfSignature = `{\rtf1\ansi\deff0
+{\fonttbl{\f0 Calibri;}}
+\f0\fs18 Best regards / Mit freundlichen Gr\'fc\'dfen,\line
+\b i.A. ${escapeRtf(name)}\b0\line
+${escapeRtf(title)}\line
+\line
+Atlas Copco Tools Central Europe GmbH\line
+Address: Langemarckstr. 35, D-45141 Essen\line
+We're moving! New Visitor Address as of Dec 1, 2025: Wetterschacht 9, D-45139 Essen\line
+Postal Address: 10 02 04, D-45002 Essen\line
+Managing Director: Claus Schiedeck, Peter Edmonds\line
+\line
+${escapeRtf(contactInfoText).replace(/\n/g, "\line ")}\line
+VAT Reg. No.: DE811155641\line
+Company Reg. No.: HRB 5096 – Local Court Essen\line
+Registered Office: Atlas Copco Tools Central Europe GmbH\line
+\line
+Privacy policy: https://www.atlascopco.com/de-de/itba/datenschutzerklarung\line
+Leave your feedback at atlascopco.com\line
+\line
+Part of the Atlas Copco Group
 }`;
 
       signaturePreview.classList.add('has-content');
@@ -891,13 +886,14 @@ Teil der Atlas Copco Gruppe
     }
 
     function maskManagingDirectorInPreview(container) {
-      const managingDirectorLabel = 'Geschäftsführung:';
+      const managingDirectorLabels = ['Managing Director:', 'Geschäftsführung:'];
       const managingDirectorElement = Array.from(container.querySelectorAll('div')).find(div =>
-        div.textContent.trim().startsWith(managingDirectorLabel)
+        managingDirectorLabels.some(label => div.textContent.trim().startsWith(label))
       );
 
       if (managingDirectorElement) {
-        managingDirectorElement.innerHTML = `${managingDirectorLabel} <span class="preview-privacy-note">[In der Vorschau ausgeblendet]</span>`;
+        const label = managingDirectorLabels.find(l => managingDirectorElement.textContent.trim().startsWith(l)) || managingDirectorLabels[0];
+        managingDirectorElement.innerHTML = `${label} <span class="preview-privacy-note">[In der Vorschau ausgeblendet]</span>`;
       }
     }
 
