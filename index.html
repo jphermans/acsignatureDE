@@ -612,7 +612,7 @@
     </header>
 
     <section class="hero">
-      <h1>Erstelle eine professionelle Atlas Copco E-Mail-Signatur</h1>
+      <h1>Erstelle eine professionelle Atlas Copco E-Mail-Signatur.</h1>
       <p>Speziell für unsere deutschen Kolleg:innen: Trage deine Daten ein, erstelle die Vorschau und lade alles als Paket für eine schnelle Implementierung in Outlook herunter.</p>
     </section>
 
@@ -622,7 +622,7 @@
         <div class="form-grid">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Zum Beispiel: Jan Janssens" required>
+            <input type="text" id="name" placeholder="Zum Beispiel: Horst Tappert" required>
             <div id="error-name" class="error-message">Name ist erforderlich</div>
           </div>
 
@@ -659,7 +659,7 @@
       <section class="card preview-card">
         <div class="preview-header">
           <h2>Vorschau</h2>
-          <p>Sieh dir die Signatur so an, wie sie deine Kolleg:innen erhalten.</p>
+          <p>Schauen Sie sich die Signatur an, wie Ihre Kolleginnen und Kollegen sie erhalten werden.</p>
         </div>
         <div class="signature-preview">
           <div id="signature" class="signature-canvas">
@@ -673,14 +673,15 @@
       <h3>Outlook-Implementierung</h3>
       <p><strong>Schritt-für-Schritt-Anleitung:</strong></p>
       <ol>
-        <li>Klicke auf <strong>Nach Outlook exportieren (ZIP)</strong>. Es wird eine ZIP-Datei mit allen benötigten Dateien heruntergeladen.</li>
+        <li>Klicke auf <strong>Nach Outlook exportieren (ZIP)</strong>Es wird eine ZIP-Datei mit allen benötigten Dateien heruntergeladen.</li>
         <li>Öffne die ZIP-Datei und entpacke den Inhalt.</li>
         <li>Öffne den Ordner <code>%appdata%\Microsoft\Signatures</code> im Windows-Explorer.</li>
         <li>Kopiere die Dateien und den Ordner aus der ZIP in diesen Signatures-Ordner. Beispielstruktur:
           <pre>AtlasCopco(john.doe@atlascopco.com).htm
 AtlasCopco(john.doe@atlascopco.com).rtf
 AtlasCopco(john.doe@atlascopco.com).txt
-AtlasCopco(john.doe@atlascopco.com)_files\</pre>
+AtlasCopco(john.doe@atlascopco.com)_files\
+          </pre>
         </li>
         <li>Schließe Outlook vollständig (ggf. auch über den Task-Manager) und starte es neu.</li>
         <li>Gehe zu <strong>Datei → Optionen → E-Mail → Signaturen</strong> und wähle die neue Signatur als Standard.</li>
@@ -791,28 +792,30 @@ AtlasCopco(john.doe@atlascopco.com)_files\</pre>
       const telPhone = sanitizeTel(phone);
 
       if (phone !== "") {
-        contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Phone: <a href="tel:${telPhone}" style="color:#2F363A;text-decoration:none;">${safePhone}</a> - Mobile: <a href="tel:${telMobile}" style="color:#2F363A;text-decoration:none;">${safeMobile}</a></div>`;
+        contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;"><b>Phone:</b> <a href="tel:${telPhone}" style="color:#2F363A;text-decoration:none;">${safePhone}</a> - Mobile: <a href="tel:${telMobile}" style="color:#2F363A;text-decoration:none;">${safeMobile}</a></div>`;
         contactInfoText += `Phone: ${phone} - Mobile: ${mobile}\n`;
       } else {
-        contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Mobile: <a href="tel:${telMobile}" style="color:#2F363A;text-decoration:none;">${safeMobile}</a></div>`;
+        contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;"><b>Mobile:</b> <a href="tel:${telMobile}" style="color:#2F363A;text-decoration:none;">${safeMobile}</a></div>`;
         contactInfoText += `Mobile: ${mobile}\n`;
       }
 
-      contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Email: <a href="mailto:${safeEmail}" style="color:#0092BC;text-decoration:none;">${safeEmail}</a></div>`;
+      contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;"><b>Email:</b> <a href="mailto:${safeEmail}" style="color:#0092BC;text-decoration:none;">${safeEmail}</a></div>`;
       contactInfoText += `Email: ${email}\n`;
 
       htmlSignature = `
 <html><head><meta charset="UTF-8"></head><body>
 <div style="font-family:Calibri,Arial,sans-serif; font-size:9pt; color:#2F363A; line-height:1.4; max-width:600px;">
-  <div>Best regards / Mit freundlichen Grüßen,</div>
-  <div style="margin-top:4px; font-weight:bold;">i.A. <span style="color:#0092BC;">${safeName}</span></div>
+  <div>Best regards / Mit freundlichen Grüßen,</div><br>
+  <div style="margin-top:4px; font-weight:bold;"><span style="color:#0092BC;">i.A. ${safeName}</span></div>
   <div style="font-weight:bold; font-size:9pt; margin-top:2px;">${safeTitle}</div>
 
-  <div style="margin-top:12px; font-weight:bold; font-size:10pt;">Atlas Copco Tools Central Europe GmbH</div>
+  <hr style="border:0;border-top:1px solid #E1D6CE;margin:8px 0;">
+
+  <div style="margin-top:12px; font-weight:bold; font-size:10pt;">Atlas Copco Tools Central Europe GmbH</div><br>
   <div>Address: Langemarckstr. 35, D-45141 Essen</div>
-  <div style="color:#d1434b; font-weight:bold;">We're moving! New Visitor Address as of Dec 1, 2025: Wetterschacht 9, D-45139 Essen</div>
-  <div>Postal Address: 10 02 04, D-45002 Essen</div>
-  <div>Managing Director: Claus Schiedeck, Peter Edmonds</div>
+  <div style="color:red; font-weight:bold;"><u>We're moving! New Visitor Address as of Dec 1, 2025:</u> Wetterschacht 9, D-45139 Essen</div>
+  <div><b>Postal Address: 10 02 04, D-45002 Essen</b></div>
+  <div><b>Managing Director: Claus Schiedeck, Peter Edmonds</b></div>
 
   <div style="margin-top:6px;">${contactInfoHtml}</div>
 
@@ -822,7 +825,11 @@ AtlasCopco(john.doe@atlascopco.com)_files\</pre>
 
   <div style="margin-top:6px;">Privacy policy: <a href="https://www.atlascopco.com/de-de/itba/datenschutzerklarung" target="_blank" style="color:#0092BC;text-decoration:none;">https://www.atlascopco.com/de-de/itba/datenschutzerklarung</a></div>
 
-  <div style="margin-top:6px;"><b style="color:#0092BC;">Leave your feedback at</b> <a href="https://www.atlascopco.com" target="_blank" style="color:#0092BC; font-style:italic; text-decoration:none;">atlascopco.com</a></div>
+  <hr style="border:0;border-top:1px solid #E1D6CE;margin:8px 0;">
+
+  <div style="margin-top:6px;"><b style="color:#0092BC;">Leave your feedback at</b> <a href="https://www.atlascopco.com/de-de" target="_blank" style="color:#0092BC; font-style:italic; text-decoration:none;">AtlasCopco.com</a></div>
+
+  <hr style="border:0;border-top:1px solid #E1D6CE;margin:8px 0;">
 
   <div style="margin-top:10px;">
     <table cellpadding="0" cellspacing="0" border="0">
