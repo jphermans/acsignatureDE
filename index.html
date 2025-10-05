@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Atlas Copco Handtekening Generator</title>
+  <title>Atlas Copco E-Mail-Signaturgenerator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -93,7 +93,7 @@
       row-gap: 12px;
     }
 
-    .belgium-badge {
+    .country-badge {
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -108,32 +108,32 @@
       white-space: nowrap;
     }
 
-    .belgium-badge .flag-icon {
-      display: inline-grid;
-      grid-template-columns: repeat(3, 1fr);
+    .country-badge .flag-icon {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
       width: 20px;
       height: 14px;
       border-radius: 3px;
       overflow: hidden;
     }
 
-    .belgium-badge .flag-icon span {
+    .country-badge .flag-icon span {
       display: block;
     }
 
-    .belgium-badge .flag-icon span:nth-child(1) {
+    .country-badge .flag-icon span:nth-child(1) {
       background: #000000;
     }
 
-    .belgium-badge .flag-icon span:nth-child(2) {
-      background: #fae042;
+    .country-badge .flag-icon span:nth-child(2) {
+      background: #dd0000;
     }
 
-    .belgium-badge .flag-icon span:nth-child(3) {
-      background: #ed2939;
+    .country-badge .flag-icon span:nth-child(3) {
+      background: #ffce00;
     }
 
-    body[data-theme="dark"] .belgium-badge {
+    body[data-theme="dark"] .country-badge {
       background: var(--surface-soft);
     }
 
@@ -598,92 +598,92 @@
         <div class="brand-mark">AC</div>
         <div class="brand-copy">
           <span class="eyebrow">Atlas Copco Tools</span>
-          <span class="brand-title">Handtekening Generator</span>
+          <span class="brand-title">Signaturgenerator</span>
         </div>
       </div>
-      <div class="belgium-badge" aria-label="Speciaal voor Belgische gebruikers">
+      <div class="country-badge" aria-label="Speziell für belgische Nutzer:innen">
         <span class="flag-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-        <span>Voor België</span>
+        <span>Für Belgien</span>
       </div>
       <button id="theme-toggle" class="ghost-button" type="button" aria-pressed="false">
         <span class="icon" aria-hidden="true">🌙</span>
-        <span class="label">Donkere modus</span>
+        <span class="label">Dunkler Modus</span>
       </button>
     </header>
 
     <section class="hero">
-      <h1>Maak een professionele Atlas Copco e-mailhandtekening</h1>
-      <p>Speciaal voor onze Belgische collega's: vul je gegevens in, genereer het voorbeeld en download alles in één pakket voor een snelle implementatie in Outlook.</p>
+      <h1>Erstelle eine professionelle Atlas Copco E-Mail-Signatur</h1>
+      <p>Speziell für unsere belgischen Kolleg:innen: Trage deine Daten ein, erstelle die Vorschau und lade alles als Paket für eine schnelle Implementierung in Outlook herunter.</p>
     </section>
 
     <main class="layout">
       <section class="card form-card">
-        <h2>Gegevens</h2>
+        <h2>Daten</h2>
         <div class="form-grid">
           <div class="form-group">
-            <label for="name">Naam</label>
-            <input type="text" id="name" placeholder="Bijvoorbeeld: Jan Janssens" required>
-            <div id="error-name" class="error-message">Naam is verplicht</div>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Zum Beispiel: Jan Janssens" required>
+            <div id="error-name" class="error-message">Name ist erforderlich</div>
           </div>
 
           <div class="form-group">
-            <label for="title">Functie</label>
-            <input type="text" id="title" placeholder="Bijvoorbeeld: Sales Engineer" required>
-            <div id="error-title" class="error-message">Functie is verplicht</div>
+            <label for="title">Funktion</label>
+            <input type="text" id="title" placeholder="Zum Beispiel: Sales Engineer" required>
+            <div id="error-title" class="error-message">Funktion ist erforderlich</div>
           </div>
 
           <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="naam@atlascopco.com" required>
-            <div id="error-email" class="error-message">E-mail is verplicht en moet eindigen op @atlascopco.com</div>
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" placeholder="name@atlascopco.com" required>
+            <div id="error-email" class="error-message">E-Mail ist erforderlich und muss auf @atlascopco.com enden</div>
           </div>
 
           <div class="form-group">
-            <label for="mobile">Mobiel (verplicht)</label>
-            <input type="text" id="mobile" placeholder="04xxxxxxxx of +32xxxxxxxxx" required>
-            <div id="error-mobile" class="error-message">Mobiel nummer is verplicht</div>
+            <label for="mobile">Mobil (erforderlich)</label>
+            <input type="text" id="mobile" placeholder="04xxxxxxxx oder +32xxxxxxxxx" required>
+            <div id="error-mobile" class="error-message">Mobilnummer ist erforderlich</div>
           </div>
 
           <div class="form-group">
-            <label for="phone">Telefoon (optioneel)</label>
-            <input type="text" id="phone" placeholder="Vast nummer">
+            <label for="phone">Telefon (optional)</label>
+            <input type="text" id="phone" placeholder="Festnetznummer">
           </div>
         </div>
         <div class="actions">
-          <button class="primary" type="button" onclick="generateSignature()">Genereer handtekening</button>
-          <button class="secondary" type="button" onclick="exportAll()">Exporteer naar Outlook (ZIP)</button>
-          <button class="secondary" type="button" onclick="clearForm()">Velden leegmaken</button>
+          <button class="primary" type="button" onclick="generateSignature()">Signatur erstellen</button>
+          <button class="secondary" type="button" onclick="exportAll()">Nach Outlook exportieren (ZIP)</button>
+          <button class="secondary" type="button" onclick="clearForm()">Felder zurücksetzen</button>
         </div>
       </section>
 
       <section class="card preview-card">
         <div class="preview-header">
-          <h2>Voorbeeld</h2>
-          <p>Bekijk de handtekening zoals je collega&#39;s die ontvangen.</p>
+          <h2>Vorschau</h2>
+          <p>Sieh dir die Signatur so an, wie sie deine Kolleg:innen erhalten.</p>
         </div>
         <div class="signature-preview">
           <div id="signature" class="signature-canvas">
-            <p class="signature-placeholder">Vul je gegevens in en klik op <strong>Genereer handtekening</strong> om hier een voorbeeld te zien.</p>
+            <p class="signature-placeholder">Gib deine Daten ein und klicke auf <strong>Signatur erstellen</strong>, um hier eine Vorschau zu sehen.</p>
           </div>
         </div>
       </section>
     </main>
 
     <section class="card instructions-card" id="instructions">
-      <h3>Outlook implementatie</h3>
-      <p><strong>Stappenplan:</strong></p>
+      <h3>Outlook-Implementierung</h3>
+      <p><strong>Schritt-für-Schritt-Anleitung:</strong></p>
       <ol>
-        <li>Klik op <strong>Exporteer naar Outlook (ZIP)</strong>. Er wordt een ZIP-bestand gedownload met alle benodigde bestanden.</li>
-        <li>Open het ZIP-bestand en pak de inhoud uit.</li>
-        <li>Open de map <code>%appdata%\Microsoft\Signatures</code> in Windows Verkenner.</li>
-        <li>Kopieer de bestanden en de map uit de ZIP naar deze Signatures-map. Voorbeeldstructuur:
+        <li>Klicke auf <strong>Nach Outlook exportieren (ZIP)</strong>. Es wird eine ZIP-Datei mit allen benötigten Dateien heruntergeladen.</li>
+        <li>Öffne die ZIP-Datei und entpacke den Inhalt.</li>
+        <li>Öffne den Ordner <code>%appdata%\Microsoft\Signatures</code> im Windows-Explorer.</li>
+        <li>Kopiere die Dateien und den Ordner aus der ZIP in diesen Signatures-Ordner. Beispielstruktur:
           <pre>AtlasCopco(john.doe@atlascopco.com).htm
 AtlasCopco(john.doe@atlascopco.com).rtf
 AtlasCopco(john.doe@atlascopco.com).txt
 AtlasCopco(john.doe@atlascopco.com)_files\</pre>
         </li>
-        <li>Sluit Outlook volledig af (ook via Taakbeheer) en start opnieuw.</li>
-        <li>Ga naar <strong>Bestand → Opties → E-mail → Handtekeningen</strong> en kies de nieuwe handtekening als standaard.</li>
+        <li>Schließe Outlook vollständig (ggf. auch über den Task-Manager) und starte es neu.</li>
+        <li>Gehe zu <strong>Datei → Optionen → E-Mail → Signaturen</strong> und wähle die neue Signatur als Standard.</li>
       </ol>
     </section>
 
@@ -691,7 +691,7 @@ AtlasCopco(john.doe@atlascopco.com)_files\</pre>
       <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.62 7.62 0 0 1 8 4.8c.68.01 1.36.09 2 .26 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
       </svg>
-      <a href="https://github.com/jphermans/acsignature" target="_blank" rel="noopener">Developed by JPHsystems © 2025</a>
+        <a href="https://github.com/jphermans/acsignature" target="_blank" rel="noopener">Entwickelt von JPHsystems © 2025</a>
     </footer>
   </div>
 
@@ -772,7 +772,7 @@ AtlasCopco(john.doe@atlascopco.com)_files\</pre>
       if (!title) { showError('title'); valid = false; }
       if (!email || !email.toLowerCase().endsWith('@atlascopco.com')) { showError('email'); valid = false; }
       if (!mobile || !isValidBelgianMobile(mobile)) {
-        mobileErrorMessage.textContent = 'Geef een geldig Belgisch mobiel nummer (04xxxxxxxx of +32xxxxxxxxx)';
+        mobileErrorMessage.textContent = 'Bitte gib eine gültige belgische Mobilnummer an (04xxxxxxxx oder +32xxxxxxxxx)';
         showError('mobile');
         valid = false;
       }
@@ -790,43 +790,43 @@ AtlasCopco(john.doe@atlascopco.com)_files\</pre>
       const telMobile = sanitizeTel(mobile);
       const telPhone = sanitizeTel(phone);
 
-      contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Mobile: <a href="tel:${telMobile}" style="color:#2F363A;text-decoration:none;">${safeMobile}</a></div>`;
-      contactInfoText += `Mobile: ${mobile}\n`;
+      contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Mobil: <a href="tel:${telMobile}" style="color:#2F363A;text-decoration:none;">${safeMobile}</a></div>`;
+      contactInfoText += `Mobil: ${mobile}\n`;
 
       if (phone !== "") {
-        contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Phone: <a href="tel:${telPhone}" style="color:#2F363A;text-decoration:none;">${safePhone}</a></div>`;
-        contactInfoText += `Phone: ${phone}\n`;
+        contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">Telefon: <a href="tel:${telPhone}" style="color:#2F363A;text-decoration:none;">${safePhone}</a></div>`;
+        contactInfoText += `Telefon: ${phone}\n`;
       }
 
-      contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">E-mail: <a href="mailto:${safeEmail}" style="color:#0092BC;text-decoration:none;">${safeEmail}</a></div>`;
-      contactInfoText += `E-mail: ${email}\n`;
+      contactInfoHtml += `<div style="font-size:9pt;color:#2F363A;">E-Mail: <a href="mailto:${safeEmail}" style="color:#0092BC;text-decoration:none;">${safeEmail}</a></div>`;
+      contactInfoText += `E-Mail: ${email}\n`;
 
       htmlSignature = `
 <html><head><meta charset="UTF-8"></head><body>
 <div style="font-family:Calibri,Arial,sans-serif; font-size:9pt; color:#2F363A; line-height:1.4; max-width:600px;">
-  <div>Best regards,</div><br>
+  <div>Mit freundlichen Grüßen,</div><br>
   <div style="font-weight:bold; color:#0092BC; font-size:11pt; margin-top:4px;">${safeName}</div>
   <div style="font-weight:bold; font-size:9pt; margin-top:2px;">${safeTitle}</div>
 
   <hr style="border:0;border-top:1px solid #E1D6CE;margin:8px 0;">
 
   <div style="font-weight:bold; font-size:10pt;">Atlas Copco Tools Central Europe GmbH</div>
-  <div>Head Office: Atlas Copco Tools Central Europe GmbH, Langemarckstr. 35, D-45141 Essen</div>
-  <div style="color:red; font-weight:bold;">Head Office: <u>New Address as of Dec 1, 2025</u>: Wetterschacht 9, D-45139 Essen</div>
-  <div>Branch Office Belgium (Atlas Copco Tools Belgium): Bremakker 45, B-3740 Bilzen</div>
-  <div>Managing Director: Claus Schiedeck, Peter Edmonds</div>
+  <div>Hauptsitz: Atlas Copco Tools Central Europe GmbH, Langemarckstr. 35, D-45141 Essen</div>
+  <div style="color:red; font-weight:bold;">Hauptsitz: <u>Neue Adresse ab 1. Dezember 2025</u>: Wetterschacht 9, D-45139 Essen</div>
+  <div>Niederlassung Belgien (Atlas Copco Tools Belgium): Bremakker 45, B-3740 Bilzen</div>
+  <div>Geschäftsführung: Claus Schiedeck, Peter Edmonds</div>
 
   ${contactInfoHtml}
 
-  <div style="margin-top:6px;">VAT Reg.No.: DE811155641 (Germany) / BE0473470658 (Belgium)</div>
-  <div>Company Reg. Office: HRB 5096 – Local Court Essen (Head Office) / R.C.B. 646980 - Brussels (Belgian Branch)</div>
-  <div>Peppol ID (Belgium): 0208:0473470658</div>
+  <div style="margin-top:6px;">USt-IdNr.: DE811155641 (Deutschland) / BE0473470658 (Belgien)</div>
+  <div>Handelsregistereintrag: HRB 5096 – Amtsgericht Essen (Hauptsitz) / R.C.B. 646980 - Brüssel (Belgische Niederlassung)</div>
+  <div>Peppol-ID (Belgien): 0208:0473470658</div>
 
-  <div style="margin-top:6px;">Privacy Policy: <a href="https://www.atlascopco.com/nl-be/itba/privacy-policy" target="_blank" style="color:#0092BC;text-decoration:none;">https://www.atlascopco.com/nl-be/itba/privacy-policy</a></div>
+  <div style="margin-top:6px;">Datenschutzerklärung: <a href="https://www.atlascopco.com/nl-be/itba/privacy-policy" target="_blank" style="color:#0092BC;text-decoration:none;">https://www.atlascopco.com/nl-be/itba/privacy-policy</a></div>
 
   <hr style="border:0;border-top:1px solid #E1D6CE;margin:8px 0;">
 
-  <div><b style="color:#0092BC;">Level up your experience at</b> <a href="https://www.atlascopco.com" target="_blank" style="color:#0092BC; font-style:italic; text-decoration:none;">atlascopco.com</a></div>
+  <div><b style="color:#0092BC;">Entdecke mehr auf</b> <a href="https://www.atlascopco.com" target="_blank" style="color:#0092BC; font-style:italic; text-decoration:none;">atlascopco.com</a></div>
 
   <hr style="border:0;border-top:1px solid #E1D6CE;margin:8px 0;">
 
@@ -834,55 +834,55 @@ AtlasCopco(john.doe@atlascopco.com)_files\</pre>
     <tr>
       <td><img src="https://groupapp.atlascopco.com/mail-signature/Signature/AtlasCopco/ACBlueSquare.png" width="8" height="8" style="display:block;"></td>
       <td style="padding-left:5px;">
-        <span style="font-size:8pt; color:#A1A9B4; font-weight:bold;">Part of Atlas Copco Group</span>
+        <span style="font-size:8pt; color:#A1A9B4; font-weight:bold;">Teil der Atlas Copco Gruppe</span>
       </td>
     </tr>
   </table>
 </div>
 </body></html>`;
 
-      txtSignature = `Best regards,
+      txtSignature = `Mit freundlichen Grüßen,
 ${name}
 ${title}
 
 ----------------------------------------
 Atlas Copco Tools Central Europe GmbH
-Head Office: Atlas Copco Tools Central Europe GmbH, Langemarckstr. 35, D-45141 Essen
-Head Office: New Address as of Dec 1, 2025: Wetterschacht 9, D-45139 Essen
-Branch Office Belgium (Atlas Copco Tools Belgium): Bremakker 45, B-3740 Bilzen
-Managing Director: Claus Schiedeck, Peter Edmonds
+Hauptsitz: Atlas Copco Tools Central Europe GmbH, Langemarckstr. 35, D-45141 Essen
+Hauptsitz: Neue Adresse ab 1. Dezember 2025: Wetterschacht 9, D-45139 Essen
+Niederlassung Belgien (Atlas Copco Tools Belgium): Bremakker 45, B-3740 Bilzen
+Geschäftsführung: Claus Schiedeck, Peter Edmonds
 
-${contactInfoText}VAT Reg.No.: DE811155641 (Germany) / BE0473470658 (Belgium)
-Company Reg. Office: HRB 5096 – Local Court Essen (Head Office) / R.C.B. 646980 - Brussels (Belgian Branch)
-Peppol ID (Belgium): 0208:0473470658
+${contactInfoText}USt-IdNr.: DE811155641 (Deutschland) / BE0473470658 (Belgien)
+Handelsregistereintrag: HRB 5096 – Amtsgericht Essen (Hauptsitz) / R.C.B. 646980 - Brüssel (Belgische Niederlassung)
+Peppol-ID (Belgien): 0208:0473470658
 
-Privacy Policy: https://www.atlascopco.com/nl-be/itba/privacy-policy
+Datenschutzerklärung: https://www.atlascopco.com/nl-be/itba/privacy-policy
 ----------------------------------------
-Level up your experience at atlascopco.com
+Entdecke mehr auf atlascopco.com
 ----------------------------------------
-Part of Atlas Copco Group
+Teil der Atlas Copco Gruppe
 `;
 
       rtfSignature = `{\\rtf1\\ansi\\deff0
 {\\fonttbl{\\f0 Calibri;}}
-\\f0\\fs18 Best regards,\\line
+\\f0\\fs18 Mit freundlichen Gr\\'fc\\'dfen,\\line
 \\b\\cf1 ${escapeRtf(name)}\\b0\\line
 ${escapeRtf(title)}\\line
 \\line
 Atlas Copco Tools Central Europe GmbH\\line
-Head Office: Atlas Copco Tools Central Europe GmbH, Langemarckstr. 35, D-45141 Essen\\line
-Head Office: New Address as of Dec 1, 2025: Wetterschacht 9, D-45139 Essen\\line
-Branch Office Belgium (Atlas Copco Tools Belgium): Bremakker 45, B-3740 Bilzen\\line
-Managing Director: Claus Schiedeck, Peter Edmonds\\line
+Hauptsitz: Atlas Copco Tools Central Europe GmbH, Langemarckstr. 35, D-45141 Essen\\line
+Hauptsitz: Neue Adresse ab 1. Dezember 2025: Wetterschacht 9, D-45139 Essen\\line
+Niederlassung Belgien (Atlas Copco Tools Belgium): Bremakker 45, B-3740 Bilzen\\line
+Gesch\\'e4ftsf\\'fchrung: Claus Schiedeck, Peter Edmonds\\line
 \\line
-${contactInfoText.replace(/\n/g, "\\line ")}\\line
-VAT Reg.No.: DE811155641 (Germany) / BE0473470658 (Belgium)\\line
-Company Reg. Office: HRB 5096 – Local Court Essen (Head Office) / R.C.B. 646980 - Brussels (Belgian Branch)\\line
-Peppol ID (Belgium): 0208:0473470658\\line
+${escapeRtf(contactInfoText).replace(/\n/g, "\\line ")}\\line
+USt-IdNr.: DE811155641 (Deutschland) / BE0473470658 (Belgien)\\line
+Handelsregistereintrag: HRB 5096 - Amtsgericht Essen (Hauptsitz) / R.C.B. 646980 - Br\\'fcssel (Belgische Niederlassung)\\line
+Peppol-ID (Belgien): 0208:0473470658\\line
 \\line
-Privacy Policy: https://www.atlascopco.com/nl-be/itba/privacy-policy\\line
-Level up your experience at atlascopco.com\\line
-Part of Atlas Copco Group
+Datenschutzerkl\\'e4rung: https://www.atlascopco.com/nl-be/itba/privacy-policy\\line
+Entdecke mehr auf atlascopco.com\\line
+Teil der Atlas Copco Gruppe
 }`;
 
       signaturePreview.classList.add('has-content');
@@ -891,13 +891,13 @@ Part of Atlas Copco Group
     }
 
     function maskManagingDirectorInPreview(container) {
-      const managingDirectorLabel = 'Managing Director:';
+      const managingDirectorLabel = 'Geschäftsführung:';
       const managingDirectorElement = Array.from(container.querySelectorAll('div')).find(div =>
         div.textContent.trim().startsWith(managingDirectorLabel)
       );
 
       if (managingDirectorElement) {
-        managingDirectorElement.innerHTML = `${managingDirectorLabel} <span class="preview-privacy-note">[Verborgen in preview]</span>`;
+        managingDirectorElement.innerHTML = `${managingDirectorLabel} <span class="preview-privacy-note">[In der Vorschau ausgeblendet]</span>`;
       }
     }
 
@@ -908,7 +908,7 @@ Part of Atlas Copco Group
 
     function exportAll() {
       if (!htmlSignature) {
-        alert('Genereer eerst een handtekening!');
+        alert('Bitte erstelle zunächst eine Signatur!');
         return;
       }
       const email = document.getElementById('email').value.trim();
@@ -930,10 +930,10 @@ Part of Atlas Copco Group
       themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
       if (theme === 'dark') {
         themeIcon.textContent = '☀️';
-        themeLabel.textContent = 'Lichte modus';
+        themeLabel.textContent = 'Heller Modus';
       } else {
         themeIcon.textContent = '🌙';
-        themeLabel.textContent = 'Donkere modus';
+        themeLabel.textContent = 'Dunkler Modus';
       }
     }
 
