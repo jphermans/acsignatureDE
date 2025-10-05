@@ -601,9 +601,9 @@
           <span class="brand-title">Signaturgenerator</span>
         </div>
       </div>
-      <div class="country-badge" aria-label="Speziell für belgische Nutzer:innen">
+      <div class="country-badge" aria-label="Speziell für deutsche Nutzer:innen">
         <span class="flag-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-        <span>Für Belgien</span>
+        <span>Für Deutschland</span>
       </div>
       <button id="theme-toggle" class="ghost-button" type="button" aria-pressed="false">
         <span class="icon" aria-hidden="true">🌙</span>
@@ -613,7 +613,7 @@
 
     <section class="hero">
       <h1>Erstelle eine professionelle Atlas Copco E-Mail-Signatur</h1>
-      <p>Speziell für unsere belgischen Kolleg:innen: Trage deine Daten ein, erstelle die Vorschau und lade alles als Paket für eine schnelle Implementierung in Outlook herunter.</p>
+      <p>Speziell für unsere deutschen Kolleg:innen: Trage deine Daten ein, erstelle die Vorschau und lade alles als Paket für eine schnelle Implementierung in Outlook herunter.</p>
     </section>
 
     <main class="layout">
@@ -640,13 +640,13 @@
 
           <div class="form-group">
             <label for="mobile">Mobil (erforderlich)</label>
-            <input type="text" id="mobile" placeholder="04xxxxxxxx oder +32xxxxxxxxx" required>
+            <input type="text" id="mobile" placeholder="0151 2345678 oder +49 151 2345678" required>
             <div id="error-mobile" class="error-message">Mobilnummer ist erforderlich</div>
           </div>
 
           <div class="form-group">
             <label for="phone">Telefon (optional)</label>
-            <input type="text" id="phone" placeholder="Festnetznummer">
+            <input type="text" id="phone" placeholder="Festnetznummer, z. B. 030 1234567 oder +49 30 1234567">
           </div>
         </div>
         <div class="actions">
@@ -750,10 +750,10 @@ AtlasCopco(john.doe@atlascopco.com)_files\</pre>
       signaturePreview.innerHTML = signaturePlaceholder;
     }
 
-    function isValidBelgianMobile(number) {
+    function isValidGermanMobile(number) {
       const clean = number.replace(/[\s\-]/g, "");
-      const nationalPattern = /^04\d{8}$/;
-      const intlPattern = /^\+32\d{9}$/;
+      const nationalPattern = /^01[5-7]\d{7,8}$/;
+      const intlPattern = /^\+49(1[5-7]\d{8,9})$/;
       return nationalPattern.test(clean) || intlPattern.test(clean);
     }
 
@@ -771,8 +771,8 @@ AtlasCopco(john.doe@atlascopco.com)_files\</pre>
       if (!name) { showError('name'); valid = false; }
       if (!title) { showError('title'); valid = false; }
       if (!email || !email.toLowerCase().endsWith('@atlascopco.com')) { showError('email'); valid = false; }
-      if (!mobile || !isValidBelgianMobile(mobile)) {
-        mobileErrorMessage.textContent = 'Bitte gib eine gültige belgische Mobilnummer an (04xxxxxxxx oder +32xxxxxxxxx)';
+      if (!mobile || !isValidGermanMobile(mobile)) {
+        mobileErrorMessage.textContent = 'Bitte gib eine gültige deutsche Mobilnummer an (01… oder +49 1…)';
         showError('mobile');
         valid = false;
       }
