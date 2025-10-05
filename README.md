@@ -1,104 +1,72 @@
-# ✨ E-mail Signature Generator
+# ✨ E-Mail-Signaturgenerator
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.1.0-0092BC?style=for-the-badge" />
   <img src="https://img.shields.io/badge/status-stable-2F363A?style=for-the-badge" />
 </p>
 
 ---
 
- ## 🚀 Live Demo
-Bekijk en gebruik de generator hier:  
-👉 [Signature Generator](https://jphermans.github.io/acsignature/)
-
-
+## 🚀 Live-Demo
+Teste den Generator hier:
+👉 [Signaturgenerator](https://jphermans.github.io/acsignature/)
 
 ---
 
-## 📌 Over dit project
-Een eenvoudige tool om automatisch professionele e-mailhandtekeningen te genereren, speciaal afgestemd op gebruik in België.
-Gebouwd met **HTML, CSS en JavaScript**.  
+## 📌 Über dieses Projekt
+Ein einfaches Tool, mit dem sich professionelle E-Mail-Signaturen automatisch erstellen lassen – speziell abgestimmt auf den Einsatz in Belgien. Entwickelt mit **HTML, CSS und JavaScript**.
 
-De generator:
-- ✅ Maakt automatisch een **ZIP** met `.htm`, `.rtf`, `.txt` en `_files` map.  
-- ✅ Naamgeving volgens Outlook-standaard: `AtlasCopco(naam@atlascopco.com).*`.  
-- ✅ Zorgt dat verplichte velden (Naam, Functie, E-mail, Mobiel) ingevuld zijn.
-- ✅ Controleert dat het e-mailadres eindigt op `@atlascopco.com`.
-- ✅ Geeft duidelijke foutmeldingen bij ontbrekende velden.
-- ✅ Houdt de knoppen consistent: **Velden leegmaken** gebruikt dezelfde secundaire stijl als de downloadknop.
-- ✅ Volledig responsieve interface – inclusief uitlegkaart – voor comfortabel gebruik op mobiel, tablet en desktop.
-
----
-
-## 🎨 Layout & Kleuren
-De tool gebruikt een strak en clean design met herkenbare kleuren:
-
-| Accentkleur | <img src="assets/colors/0092BC.svg" width="20"/> | `#0092BC` |
-| Donkergrijs | <img src="assets/colors/2F363A.svg" width="20"/> | `#2F363A` |
-| Lichtgrijs  | <img src="assets/colors/E1D6CE.svg" width="20"/> | `#E1D6CE` |
-
+Der Generator:
+- ✅ Erstellt automatisch ein **ZIP** mit `.htm`, `.rtf`, `.txt` und `_files`-Ordner.
+- ✅ Vergibt Dateinamen nach Outlook-Standard: `AtlasCopco(name@atlascopco.com).*`.
+- ✅ Stellt sicher, dass Pflichtfelder (Name, Funktion, E-Mail, Mobil) ausgefüllt sind.
+- ✅ Prüft, ob die E-Mail-Adresse auf `@atlascopco.com` endet.
+- ✅ Zeigt klare Fehlermeldungen bei fehlenden Angaben.
+- ✅ Hält die Buttons konsistent: **Felder zurücksetzen** nutzt denselben sekundären Stil wie der Download-Button.
+- ✅ Bietet ein vollständig responsives Layout – inklusive Anleitung – für komfortable Nutzung auf Smartphone, Tablet und Desktop.
 
 ---
 
-## ⚙️ Installatie & Gebruik
+## 🎨 Layout & Farben
+Das Interface setzt auf ein klares Design mit vertrauten Farbtönen:
 
-### 1. Open de generator
-Download of clone dit project en open het bestand **index.html** in je browser.
+| Farbton | Beispiel | Hex |
+| --- | --- | --- |
+| Akzentfarbe | <img src="assets/colors/0092BC.svg" width="20"/> | `#0092BC` |
+| Dunkelgrau | <img src="assets/colors/2F363A.svg" width="20"/> | `#2F363A` |
+| Hellgrau  | <img src="assets/colors/E1D6CE.svg" width="20"/> | `#E1D6CE` |
 
-### 2. Vul je gegevens in
-- Naam  
-- Functie  
-- E-mail (moet eindigen op `@atlascopco.com`)  
-- Mobiel (verplicht)  
-- Telefoon (optioneel)  
+---
 
-### 3. Genereer je handtekening
-Klik op **Genereer Handtekening**.  
-Je ziet meteen een preview.
+## ⚙️ Installation & Nutzung
 
-### 4. Exporteer naar Outlook
-Klik op **Exporteer naar Outlook (ZIP)** → er wordt een ZIP-bestand aangemaakt met:
-- `AtlasCopco(naam@atlascopco.com).htm`  
-- `AtlasCopco(naam@atlascopco.com).rtf`  
-- `AtlasCopco(naam@atlascopco.com).txt`  
-- `AtlasCopco(naam@atlascopco.com)_files/`  
+### 1. Generator öffnen
+Repository herunterladen oder klonen und die Datei **index.html** im Browser öffnen.
 
-### 5. Zet de bestanden in Outlook
-- Pak het ZIP-bestand uit.  
-- Open de map:  
+### 2. Eigene Daten eintragen
+- Name
+- Funktion
+- E-Mail (muss auf `@atlascopco.com` enden)
+- Mobil (Pflichtfeld)
+- Telefon (optional)
+
+### 3. Signatur erstellen
+Auf **Signatur erstellen** klicken. Die Vorschau wird sofort aktualisiert.
+
+### 4. Nach Outlook exportieren
+Auf **Nach Outlook exportieren (ZIP)** klicken → es entsteht ein ZIP-Archiv mit:
+- `AtlasCopco(name@atlascopco.com).htm`
+- `AtlasCopco(name@atlascopco.com).rtf`
+- `AtlasCopco(name@atlascopco.com).txt`
+- `AtlasCopco(name@atlascopco.com)_files/`
+
+### 5. Dateien in Outlook ablegen
+- ZIP-Datei entpacken.
+- Ordner öffnen:
   ```bash
   %appdata%\Microsoft\Signatures
+  ```
+- Die entpackten Dateien und den Ordner in dieses Verzeichnis kopieren.
+- Outlook vollständig schließen (ggf. über den Task-Manager) und neu starten.
+- Unter **Datei → Optionen → E-Mail → Signaturen** die neue Signatur als Standard festlegen.
 
-
-![Signature Preview](assets/generator.png)
-
-
-## ⚙️ Installatie & Gebruik
-
-### 1. Open de generator
-Download of clone dit project en open het bestand **index.html** in je browser.
-
-### 2. Vul je gegevens in
-- Naam  
-- Functie  
-- E-mail (moet eindigen op `@atlascopco.com`)  
-- Mobiel (verplicht)  
-- Telefoon (optioneel)  
-
-### 3. Genereer je handtekening
-Klik op **Genereer Handtekening**.  
-Je ziet meteen een preview.
-
-### 4. Exporteer naar Outlook
-Klik op **Exporteer naar Outlook** → er worden 3 bestanden aangemaakt:
-- `AtlasCopco.htm`  
-- `AtlasCopco.rtf`  
-- `AtlasCopco.txt`  
-
-### 5. Zet de bestanden in Outlook
-- Open de map:  
-  ```bash
-  %appdata%\Microsoft\Signatures
-
- 
-
+![Signaturvorschau](assets/generator.png)
