@@ -1,6 +1,7 @@
 # ✨ E-Mail-Signaturgenerator
 
 <p align="center">
+  <img src="https://img.shields.io/badge/version-1.1.0-0092BC?style=for-the-badge" />
   <img src="https://img.shields.io/badge/status-stable-2F363A?style=for-the-badge" />
 </p>
 
