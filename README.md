@@ -14,7 +14,7 @@ Teste den Generator hier:
 ---
 
 ## 📌 Über dieses Projekt
-Ein einfaches Tool, mit dem sich professionelle E-Mail-Signaturen automatisch erstellen lassen – speziell abgestimmt auf den Einsatz in Belgien. Entwickelt mit **HTML, CSS und JavaScript**.
+Ein einfaches Tool, mit dem sich professionelle E-Mail-Signaturen automatisch erstellen lassen – speziell abgestimmt auf den Einsatz in Deutschland. Entwickelt mit **HTML, CSS und JavaScript**.
 
 Der Generator:
 - ✅ Erstellt automatisch ein **ZIP** mit `.htm`, `.rtf`, `.txt` und `_files`-Ordner.
